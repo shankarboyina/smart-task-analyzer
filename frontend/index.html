@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Smart Task Analyzer — Add Tasks</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden>
+        <defs>
+          <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#6EE7B7"/><stop offset="1" stop-color="#3B82F6"/></linearGradient>
+        </defs>
+        <rect rx="6" width="24" height="24" fill="url(#g)"/>
+        <path d="M7 12h10M7 16h6" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h1>Smart Task Analyzer</h1>
+    </div>
+    <div class="header-note">Prioritize what matters. Fast, visual, explainable.</div>
+  </header>
+
+  <main class="wrap">
+    <aside class="panel left">
+      <label class="label">Strategy</label>
+      <select id="strategy" class="select">
+        <option value="smart">Smart (balanced)</option>
+        <option value="fastest_wins">Fastest Wins</option>
+        <option value="high_impact">High Impact</option>
+        <option value="deadline_driven">Deadline Driven</option>
+      </select>
+
+      <!-- Add-Task mini-form -->
+      <div class="mini-form">
+        <div class="row">
+          <input id="newId" placeholder="id (e.g. t5)" class="input short" />
+          <input id="newTitle" placeholder="title" class="input" />
+        </div>
+        <div class="row mt8">
+          <input id="newDue" placeholder="due_date YYYY-MM-DD or blank" class="input" />
+          <input id="newHours" placeholder="hours" class="input tiny" />
+          <input id="newImportance" placeholder="importance (1-10)" class="input small" />
+        </div>
+        <div class="row mt8">
+          <input id="newDeps" placeholder="dependencies (comma separated ids)" class="input" />
+          <button id="addTaskBtn" class="btn tiny">Add Task</button>
+          <button id="cancelEditBtn" class="btn plain tiny" style="display:none;margin-left:8px">Cancel</button>
+          <button id="bulkPasteBtn" class="btn plain tiny">Paste & Split</button>
+        </div>
+        <div class="hint">Add many tasks with the form — tasks are appended to the JSON textarea below.</div>
+
+        <div id="liveList" class="live-list" aria-live="polite"></div>
+      </div>
+
+      <label class="label" style="margin-top:12px">Tasks (JSON array)</label>
+      <textarea id="tasksArea" spellcheck="false" rows="12" class="textarea"></textarea>
+
+      <div class="controls">
+        <button id="loadSample" class="btn plain">Load sample</button>
+        <div style="flex:1"></div>
+        <button id="suggestBtn" class="btn accent">Suggest top 3</button>
+        <button id="analyzeBtn" class="btn primary">Analyze</button>
+      </div>
+
+      <details class="help">
+        <summary>Task object format</summary>
+        <pre class="example">
+{
+  "id":"t1",
+  "title":"Fix login",
+  "due_date":"2025-12-01",
+  "estimated_hours":3,
+  "importance":8,
+  "dependencies":[]
+}
+        </pre>
+      </details>
+    </aside>
+
+    <section class="panel right">
+      <div id="status" class="status">Ready</div>
+
+      <div id="resultHeader" class="result-header" hidden>
+        <span id="resultTitle">Strategy: smart</span>
+        <button id="clearResults" class="btn tiny">Clear</button>
+      </div>
+
+      <div id="results" class="results" aria-live="polite"></div>
+
+      <div id="suggestions" class="suggestions" hidden>
+        <h3>Top suggestions</h3>
+        <div id="suggestList"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Built with ♥ · Explainable scoring · Local demo</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
