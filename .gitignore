@@ -1,0 +1,35 @@
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+*.egg
+
+# Django
+db.sqlite3
+*.log
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Byte-compiled
+*.pyc
+*.pyd
+*.pyo
+
+# Coverage / Testing
+.pytest_cache/
+coverage/
+
+# Node (if added later)
+node_modules/
+dist/
+build/
