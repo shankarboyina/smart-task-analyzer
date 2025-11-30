@@ -26,9 +26,9 @@ This project includes:
 ## Installation
 
 
-git clone https://github.com/shankar_boyina/samrt-task-analyzer.git
+git clone [https://github.com/shankar_boyina/samrt-task-analyzer.git
 cd smart-task-analyzer
-
+](https://github.com/shankarboyina/smart-task-analyzer.git)
 ## Create and activate a virtual environment:
 python -m venv venv
 venv\Scripts\activate
