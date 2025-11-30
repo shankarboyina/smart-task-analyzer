@@ -1,35 +1,39 @@
-# Virtual environment
-venv/
-env/
-ENV/
-
-# Python cache
+# Python
 __pycache__/
 *.py[cod]
-*.pyo
+env/
+venv/
 *.egg-info/
 *.egg
+pip-log.txt
+pip-delete-this-directory.txt
 
-# Django
+# Virtualenv (venv used)
+venv/
+venv/*
+
+# Django stuff
+*.sqlite3
 db.sqlite3
 *.log
+/staticfiles/
+/media/
 
-# OS / Editor files
+# VSCode
+.vscode/
+
+# OS files
 .DS_Store
 Thumbs.db
-.vscode/
-.idea/
 
-# Byte-compiled
-*.pyc
-*.pyd
-*.pyo
-
-# Coverage / Testing
+# Python cache, pyenv, pipenv
 .pytest_cache/
-coverage/
+.python-version
 
-# Node (if added later)
+# Mac/Linux swap
+*~
+
+# Node (if you add a frontend build later)
 node_modules/
 dist/
 build/
