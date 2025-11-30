@@ -122,6 +122,19 @@ Time-efficiency: Avoided unnecessary frameworks to meet the 24-hour time constra
 
 # 4. Time Breakdown
 
+### 4. Time Breakdown
+
+| Task                                 | Time Spent     |
+|--------------------------------------|----------------|
+| Backend setup (Django project + API) | 1 hour         |
+| Scoring engine design + testing      | 2.5 hours      |
+| Frontend creation + styling          | 2 hours        |
+| Task builder UI (Add/Edit/Remove)    | 1.5 hours      |
+| Debugging, testing, fixes            | 1 hour         |
+| README + GitHub cleanup              | 30 minutes     |
+| Total                                | ~8.5 hours     |
+
+
 # 5. Bonus Challenges Attempted
 Dynamic scoring strategies
 
